@@ -28,4 +28,19 @@ img {
 }
 .lang-list {
   display: flex;
+
+  padding-left: 0;
+}
+.leng-text {
+  display: flex;
+}
+li {
+  list-style-type: none;
+}
+ul {
+  padding-left: 0;
+}
+.short-list {
+  display: flex;
+  align-items: center;
 }

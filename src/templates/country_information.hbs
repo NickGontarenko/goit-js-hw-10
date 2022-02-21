@@ -5,23 +5,20 @@
 </div>
 <div>
   <p><b>Capital</b>: <span>{{capital}}</span></p>
-  <p><b>Population</b>: <span>{{population}}</span></p>
+  <p><b>Population</b>: <span>{{population}}&nbsp;people</span></p>
 
-  <p class="lang-list"><b>Languages:</b>
-  <ul>
-      {{!-- {{#each languages}}
-      <li>{{this}}</li>
-      {{/each}} --}}
-
-      {{#each languages}}{{#if @join}}<li>{{this}}</li>{{/if}} {{/each}}
+  <ul class="lang-list">
+    <li><b>Languages:&nbsp;</b></li>
+          {{#each languages}}
+          {{#if @last}}
+          <li>{{this}}</li>
+          {{else}}
+          <li>{{this}},&nbsp;</li>
+          {{/if}}
+          {{/each}}
   </ul>
-  
-  </p>
+{{!-- Я два раза голову сломал что бы этот кусочек кода построить --}}
 
 </div>
 {{/each}}
 
-{{!-- 
-{#each languages}}
-  <p><b>Languages</b>: {{languages}}</p>
-{{/each}} --}}
