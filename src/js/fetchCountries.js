@@ -1,18 +1,12 @@
 export const fetchCountries = function (countryName) {
-  const url = `https://restcountries.com/v3.1/name/${countryName}?fields=name,capital,population,flags,languages`;
+  // console.log(countryName);
 
-  return fetch(url)
-    .then(response => {
-      // console.log(response);
-      return response.json();
-    })
-    .then(country => {
-      console.log(country);
-      const markupCountry = countryInfoTpl(country);
-      console.log(markupCountry);
-      countryInfoRef.innerHTML = markupCountry;
-    })
-    .catch(error => {
-      console.log('error');
-    });
-};
+  return fetch(
+    `https://restcountries.com/v3.1/name/${countryName}?fields=name,capital,population,flags,languages`,
+  ).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  });
+}
